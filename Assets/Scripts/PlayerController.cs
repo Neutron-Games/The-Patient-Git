@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public bool canMove;public bool canRun; public bool canJump; public bool canCrouch;
+    public bool canMove;public bool canRun; public bool canJump; public bool canCrouch; public bool stamina;
     bool isRunning => Input.GetKey(sprintKey) && canRun && !isCrouching;
     bool isJumping => Input.GetKeyDown(jumpKey) && characterController.isGrounded;
 
@@ -163,27 +163,30 @@ public class PlayerController : MonoBehaviour
         float moveDirectionY = moveDirection.y;
         moveDirection = (transform.TransformDirection(Vector3.forward) * currentInput.x) + (transform.TransformDirection(Vector3.right) * currentInput.y);
         moveDirection.y = moveDirectionY;
-        if (currentStamina < 0.01f)
+        if (stamina)
         {
-            canRun = false;
-        }
-        else
-        {
-            canRun = true;
-        }
-        if (notRunningTime > 3)
-        {
-            currentStamina += staminaGain * Time.deltaTime;            
-        }
-        if (isRunning)
-        {
-            notRunningTime = 0;
-            currentStamina -= staminaLose * Time.deltaTime;
-        }
-        else if (!isRunning && currentStamina < maxStamina && notRunningTime <4) { notRunningTime += Time.deltaTime; }
-        else if (currentStamina > maxStamina)
-        {
-            currentStamina = maxStamina;
+            if (currentStamina < 0.01f)
+            {
+                canRun = false;
+            }
+            else
+            {
+                canRun = true;
+            }
+            if (notRunningTime > 3)
+            {
+                currentStamina += staminaGain * Time.deltaTime;
+            }
+            if (isRunning)
+            {
+                notRunningTime = 0;
+                currentStamina -= staminaLose * Time.deltaTime;
+            }
+            else if (!isRunning && currentStamina < maxStamina && notRunningTime < 4) { notRunningTime += Time.deltaTime; }
+            else if (currentStamina > maxStamina)
+            {
+                currentStamina = maxStamina;
+            }
         }
     }
     void HandleMouseInput()

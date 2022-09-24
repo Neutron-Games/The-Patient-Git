@@ -1174,6 +1174,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryObjects: []
+  sprites: []
+  imageNames: []
   inventoryObjectCount: 0
   maxObjectCount: 10
 --- !u!1 &7627449346491944191
@@ -2128,7 +2130,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 7627449346828979363}
   m_HandleRect: {fileID: 7627449346828979362}
   m_Direction: 0
