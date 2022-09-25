@@ -145,7 +145,7 @@ public class PlayerController : MonoBehaviour
 
     private void HandleCrouch()
     {
-        if (shouldCrouch)
+        if (shouldCrouch && (!Physics.Raycast(playerCamera.transform.position, Vector3.up, 1.2f) || !isCrouching))
         {
             StartCoroutine(CrouchStand());
         }
@@ -198,7 +198,6 @@ public class PlayerController : MonoBehaviour
     }
     IEnumerator CrouchStand()
     {
-        if (isCrouching && Physics.Raycast(playerCamera.transform.position, Vector3.up, 1))
         duringCrouch = true;
         float timeElapsed = 0;
         float targerHeight = isCrouching ? standingHeight : crouchingHeight;
