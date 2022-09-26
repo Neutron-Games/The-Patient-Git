@@ -98,8 +98,11 @@ public class PlayerController : MonoBehaviour
             if (canCrouch)
             {
                 HandleCrouch();
+            } 
+            if (false)
+            {
+                HandleHeadBob();
             }
-            HandleHeadBob();
             HandleFootSteps();
             ApplyFinalMovement();
         }
