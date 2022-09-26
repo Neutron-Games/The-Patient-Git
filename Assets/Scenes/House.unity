@@ -1564,8 +1564,8 @@ ParticleSystem:
         m_RotationOrder: 4
     startColor:
       serializedVersion: 2
-      minMaxState: 0
-      minColor: {r: 1, g: 1, b: 1, a: 1}
+      minMaxState: 2
+      minColor: {r: 0, g: 0.83843994, b: 1, a: 1}
       maxColor: {r: 0, g: 0.06473446, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
@@ -2320,7 +2320,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 5
+        scalar: 3
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -6149,7 +6149,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 140682598}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -14.849, y: 1.091, z: 6.683}
+  m_LocalPosition: {x: -14.849, y: 0.566, z: 6.683}
   m_LocalScale: {x: 1, y: 1, z: 0.27469}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7730,8 +7730,8 @@ ParticleSystem:
         m_RotationOrder: 4
     startColor:
       serializedVersion: 2
-      minMaxState: 0
-      minColor: {r: 1, g: 1, b: 1, a: 1}
+      minMaxState: 2
+      minColor: {r: 0, g: 0.69485855, b: 1, a: 1}
       maxColor: {r: 0, g: 0.06473446, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
@@ -8486,7 +8486,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 5
+        scalar: 3
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -12855,9 +12855,9 @@ ParticleSystem:
         m_RotationOrder: 4
     startColor:
       serializedVersion: 2
-      minMaxState: 0
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0.048026778, b: 0, a: 1}
+      minMaxState: 2
+      minColor: {r: 1, g: 0.92518747, b: 0, a: 1}
+      maxColor: {r: 1, g: 0.5967617, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -13611,7 +13611,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 5
+        scalar: 3
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -22862,9 +22862,9 @@ ParticleSystem:
         m_RotationOrder: 4
     startColor:
       serializedVersion: 2
-      minMaxState: 0
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 0.048026778, b: 0, a: 1}
+      minMaxState: 2
+      minColor: {r: 1, g: 0.91652924, b: 0, a: 1}
+      maxColor: {r: 1, g: 0.65280265, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -23618,7 +23618,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 5
+        scalar: 3
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -27447,7 +27447,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 964237858}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -14.849, y: 1.196, z: 6.683}
+  m_LocalPosition: {x: -14.849, y: 0.941, z: 6.683}
   m_LocalScale: {x: 1, y: 1, z: 0.27469}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -29038,8 +29038,8 @@ ParticleSystem:
         m_RotationOrder: 4
     startColor:
       serializedVersion: 2
-      minMaxState: 0
-      minColor: {r: 1, g: 1, b: 1, a: 1}
+      minMaxState: 2
+      minColor: {r: 0, g: 0.83843994, b: 1, a: 1}
       maxColor: {r: 0, g: 0.06473446, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
@@ -29794,7 +29794,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 5
+        scalar: 3
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -33623,7 +33623,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1343241442}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -14.849, y: 1.338, z: 6.683}
+  m_LocalPosition: {x: -14.849, y: 1.213, z: 6.683}
   m_LocalScale: {x: 1, y: 1, z: 0.27469}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -41747,8 +41747,8 @@ ParticleSystem:
         m_RotationOrder: 4
     startColor:
       serializedVersion: 2
-      minMaxState: 0
-      minColor: {r: 1, g: 1, b: 1, a: 1}
+      minMaxState: 2
+      minColor: {r: 0, g: 0.69485855, b: 1, a: 1}
       maxColor: {r: 0, g: 0.06473446, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
@@ -42503,7 +42503,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 5
+        scalar: 3
         minScalar: 30
         maxCurve:
           serializedVersion: 2
