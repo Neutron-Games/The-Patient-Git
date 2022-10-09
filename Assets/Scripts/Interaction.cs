@@ -8,12 +8,12 @@ public class Interaction : MonoBehaviour
 {
     public Sprite[] points;
     public Transform canvas;
-    
+
     [Header("Controls")]
     KeyCode inspect = KeyCode.Mouse1;
     KeyCode take = KeyCode.Mouse0;
 
-    [HideInInspector]public bool canTake;
+    [HideInInspector] public bool canTake;
     GameObject inventoryInteract;
     Camera playerCamera;
     Image lookPoint;
@@ -39,7 +39,7 @@ public class Interaction : MonoBehaviour
                 originPoint = interactedObject.transform;
                 playerCamera.transform.parent.GetComponent<PlayerController>().canMove = false;
                 description.transform.GetChild(0).gameObject.SetActive(true);
-                description.InteractionButtonHasPressed(interactedObject.collider.gameObject, canTake, inventory, gameObject.GetComponent<Interaction>() , originPoint);
+                description.InteractionButtonHasPressed(interactedObject.collider.gameObject, canTake, inventory, gameObject.GetComponent<Interaction>(), originPoint);
             }
             else if (Input.GetKeyDown(take) && canTake)
             {
