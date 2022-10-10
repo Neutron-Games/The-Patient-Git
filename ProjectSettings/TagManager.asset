@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Footsteps/Parquet
   - Footsteps/Tile
-  - interactable
   layers:
   - Default
   - TransparentFX
