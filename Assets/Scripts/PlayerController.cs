@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public bool canMove;public bool canRun; public bool canJump; public bool canCrouch; public bool stamina;
+    public static bool canMove = true; public bool canRun; public bool canJump; public bool canCrouch; public bool stamina;
     bool isRunning => Input.GetKey(sprintKey) && canRun && !isCrouching;
     bool isJumping => Input.GetKeyDown(jumpKey) && characterController.isGrounded;
 
@@ -32,16 +32,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float gravity = 30.0f;
 
     [Header("Look Parameters")]
-    [SerializeField, Range(0,3)] private float lookSpeedX = 2;
-    [SerializeField, Range(0,3)] private float lookSpeedY = 2;
-    [SerializeField, Range(1,90)] private float LookLimit = 50;
+    [SerializeField, Range(0, 3)] private float lookSpeedX = 2;
+    [SerializeField, Range(0, 3)] private float lookSpeedY = 2;
+    [SerializeField, Range(1, 90)] private float LookLimit = 50;
 
     [Header("Crouch Parameters")]
     [SerializeField] private float standingHeight = 2;
     [SerializeField] private float crouchingHeight = 0.5f;
     [SerializeField] private float timeToCrouch = 0.25f;
-    [SerializeField] private Vector3 standingCenter = new Vector3(0,1,0);
-    [SerializeField] private Vector3 crouchingCenter = new Vector3(0,1,0);
+    [SerializeField] private Vector3 standingCenter = new Vector3(0, 1, 0);
+    [SerializeField] private Vector3 crouchingCenter = new Vector3(0, 1, 0);
     private bool isCrouching;
     private bool duringCrouch;
 
@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioClip[] tileClips = default;
     float footstepTimer = 0;
     float GetCurrentMultiplayer => isCrouching ? baseStepSpeed * crouchStepMultiplayer : isRunning ? baseStepSpeed * runStepMultiplayer : baseStepSpeed;
-    
+
 
 
     Camera playerCamera;
@@ -82,6 +82,8 @@ public class PlayerController : MonoBehaviour
         defatultYPos = playerCamera.transform.position.y;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        canMove = true;
     }
 
     private void Update()
@@ -98,7 +100,7 @@ public class PlayerController : MonoBehaviour
             if (canCrouch)
             {
                 HandleCrouch();
-            } 
+            }
             if (false)
             {
                 HandleHeadBob();
@@ -115,18 +117,18 @@ public class PlayerController : MonoBehaviour
 
         if (footstepTimer <= 0)
         {
-            if (Physics.Raycast(playerCamera.transform.position, Vector3.down, out RaycastHit hit , 3))
+            if (Physics.Raycast(playerCamera.transform.position, Vector3.down, out RaycastHit hit, 3))
             {
                 switch (hit.collider.tag)
                 {
                     case "Footsteps/Parquet":
-                        footstepAudio.PlayOneShot(parquetClips[UnityEngine.Random.Range(0,parquetClips.Length -1)]);
+                        footstepAudio.PlayOneShot(parquetClips[UnityEngine.Random.Range(0, parquetClips.Length - 1)]);
                         break;
-                            case "Footsteps/Tile":
-                        footstepAudio.PlayOneShot(tileClips[UnityEngine.Random.Range(0,tileClips.Length -1)]);
+                    case "Footsteps/Tile":
+                        footstepAudio.PlayOneShot(tileClips[UnityEngine.Random.Range(0, tileClips.Length - 1)]);
                         break;
                     default:
-                        footstepAudio.PlayOneShot(parquetClips[UnityEngine.Random.Range(0,parquetClips.Length -1)]);
+                        footstepAudio.PlayOneShot(parquetClips[UnityEngine.Random.Range(0, parquetClips.Length - 1)]);
                         break;
                 }
             }
@@ -157,12 +159,12 @@ public class PlayerController : MonoBehaviour
     private void HandleJump()
     {
         if (isJumping)
-        moveDirection.y = jumpForce;
+            moveDirection.y = jumpForce;
     }
 
     void HandleMovementInput()
     {
-        currentInput = new Vector2 ((isRunning ? sprintSpeed : isCrouching ? crouchingSpeed :walkSpeed) * Input.GetAxis("Vertical"), (isRunning ? sprintSpeed : isCrouching ? crouchingSpeed : walkSpeed) * Input.GetAxis("Horizontal"));
+        currentInput = new Vector2((isRunning ? sprintSpeed : isCrouching ? crouchingSpeed : walkSpeed) * Input.GetAxis("Vertical"), (isRunning ? sprintSpeed : isCrouching ? crouchingSpeed : walkSpeed) * Input.GetAxis("Horizontal"));
         float moveDirectionY = moveDirection.y;
         moveDirection = (transform.TransformDirection(Vector3.forward) * currentInput.x) + (transform.TransformDirection(Vector3.right) * currentInput.y);
         moveDirection.y = moveDirectionY;

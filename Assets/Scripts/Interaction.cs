@@ -8,12 +8,12 @@ public class Interaction : MonoBehaviour
 {
     public Sprite[] points;
     public Transform canvas;
-    
+
     [Header("Controls")]
     KeyCode inspect = KeyCode.Mouse1;
     KeyCode take = KeyCode.Mouse0;
 
-    [HideInInspector]public bool canTake;
+    [HideInInspector] public bool canTake;
     GameObject inventoryInteract;
     Camera playerCamera;
     Image lookPoint;
@@ -37,9 +37,9 @@ public class Interaction : MonoBehaviour
             if (Input.GetKeyDown(inspect))
             {
                 originPoint = interactedObject.transform;
-                playerCamera.transform.parent.GetComponent<PlayerController>().canMove = false;
+                // playerCamera.transform.parent.GetComponent<PlayerController>().canMove = false;
                 description.transform.GetChild(0).gameObject.SetActive(true);
-                description.InteractionButtonHasPressed(interactedObject.collider.gameObject, canTake, inventory, gameObject.GetComponent<Interaction>() , originPoint);
+                description.InteractionButtonHasPressed(interactedObject.collider.gameObject, canTake, inventory, gameObject.GetComponent<Interaction>(), originPoint);
             }
             else if (Input.GetKeyDown(take) && canTake)
             {
@@ -57,7 +57,7 @@ public class Interaction : MonoBehaviour
             if (Input.GetKey(inspect))
             {
                 padlock.transform.parent.GetComponent<Lock>().isInspecting(padlock.transform.parent.gameObject);
-                playerCamera.transform.parent.GetComponent<PlayerController>().canMove = false;
+                // playerCamera.transform.parent.GetComponent<PlayerController>().canMove = false;
             }
         }
         else
@@ -68,7 +68,7 @@ public class Interaction : MonoBehaviour
     }
     public void EndInterract()
     {
-        playerCamera.transform.parent.GetComponent<PlayerController>().canMove = true;
+        // playerCamera.transform.parent.GetComponent<PlayerController>().canMove = true;
         description.transform.GetChild(0).gameObject.SetActive(false);
     }
     public bool CanInteract()
